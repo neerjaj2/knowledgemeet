@@ -22,8 +22,8 @@ pipeline {
         
          stage ('Build Docker Image') {
             steps {
-                    sh "docker build -t neerjaj2/java-test ."
-                    sh "docker images"            
+                    sh "sudo docker build -t neerjaj2/java-test ."
+                    sh "sudo docker images"            
             }
         }
         
