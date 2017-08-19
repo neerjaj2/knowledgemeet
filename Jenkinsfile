@@ -1,23 +1,22 @@
 pipeline {
-  agent any
-  stages {
-    //stage('User Confirmation') {
-      //steps {
-      //  input 'Start'
-      //}
-    //}
-    stage('Maven Install') {
-      steps {
-        tool{
-          maven 'Maven 3.3.9'
+    agent any
+    tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "test"
+                ''' 
+            }
         }
-      }
+
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
+        }
     }
-    stage('Run Test Cases') {
-      steps {
-        sh '''which mvn
-mvn test'''
-      }
-    }
-  }
 }
