@@ -1,16 +1,12 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven 3.5.0' 
-    }
     stages {
-        stage ('Initialize') {
+        stage('Run Tests') {
             steps {
-                sh '''
-                    echo "test"
-                ''' 
+                    withEnv(["PATH+MAVEN=${tool 'maven3'}/bin"]) {
+                    sh "mvn test"
+                    }
             }
-        }
 
         stage ('Build') {
             steps {
