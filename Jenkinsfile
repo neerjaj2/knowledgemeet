@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
-                    withEnv(["PATH+MAVEN=${tool 'maven3'}/bin"]) 
+                    withEnv(["PATH+MAVEN=${tool 'maven'}/bin"]) 
                     {
                     sh "mvn test"
                     }
