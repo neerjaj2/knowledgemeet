@@ -21,7 +21,9 @@ pipeline {
         }
         
           stage ('Docker Build') {
+              steps {
             image = docker.build("neerjaj2/java-test:latest")
+              }
       }   
         
  /*         stage('Test image') {
