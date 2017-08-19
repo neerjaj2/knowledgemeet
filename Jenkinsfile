@@ -1,14 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('User Confirmation') {
-      steps {
-        input 'Start'
-      }
-    }
+    //stage('User Confirmation') {
+      //steps {
+      //  input 'Start'
+      //}
+    //}
     stage('Maven Install') {
       steps {
-        tool(name: 'maven', type: 'maven')
+        tool{
+          maven 'maven'
+        }
       }
     }
     stage('Run Test Cases') {
