@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Run Test') {
       steps {
-        tool(name: 'maven', type: 'Maven 3.3.9')
+        tool(name: 'maven', type: 'maven')
       }
     }
   }
