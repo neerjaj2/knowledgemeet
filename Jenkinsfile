@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.5-jdk-8'
-    }
-    
-  }
+  agent any
   stages {
-    stage('Run Test') {
+    stage('User Confirmation') {
       steps {
-        sh 'mvn test'
+        input 'Start'
       }
     }
   }
