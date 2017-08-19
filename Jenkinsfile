@@ -8,16 +8,12 @@ pipeline {
     }
     stage('Run Test') {
       steps {
-        parallel(
-          "Run Test": {
-            tool(name: 'maven', type: 'maven')
-            
-          },
-          "Execute Test Cases": {
-            sh 'mvn test'
-            
-          }
-        )
+        tool(name: 'maven', type: 'maven')
+      }
+    }
+    stage('Run Test -2 ') {
+      steps {
+        sh 'mvn test'
       }
     }
   }
