@@ -12,7 +12,10 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'
+                withEnv(["PATH+MAVEN=${tool 'maven'}/bin"]) 
+                    {
+                    sh "mvn package"
+                    }            
             }
         }
         }
