@@ -24,11 +24,12 @@ pipeline {
             image = docker.build("neerjaj2/java-test:latest")
       }   
         
- //         stage('Test image') {
-   //     image.inside {
-     //       sh 'echo "Tests passed"'
-       // } 
-   // }
+          stage('Test image') {
+             image.inside {
+             sh 'echo "Tests passed"'
+           // sh 'curl localhost:8080'
+        } 
+    }
         
         
         
