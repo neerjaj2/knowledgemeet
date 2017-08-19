@@ -20,12 +20,15 @@ pipeline {
             }
         }
         
-         stage ('Build Docker Image') {
-            steps {
-                    sh "sudo docker build -t neerjaj2/java-test ."
-                    sh "sudo docker images"            
-            }
-        }
+          stage ('Docker Build') {
+            image = docker.build("neerjaj2/java-test:latest")
+      }   
+        
+ //         stage('Test image') {
+   //     image.inside {
+     //       sh 'echo "Tests passed"'
+       // } 
+   // }
         
         
         
