@@ -15,6 +15,7 @@ pipeline {
                 withEnv(["PATH+MAVEN=${tool 'maven'}/bin"]) 
                     {
                     sh "mvn package"
+                    sh "ls"
                     }            
             }
         }
