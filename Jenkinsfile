@@ -9,7 +9,7 @@ pipeline {
     stage('Maven Install') {
       steps {
         tool{
-          maven 'maven'
+          maven 'Maven 3.3.9'
         }
       }
     }
